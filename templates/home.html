@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="main-title">✨ Welcome to the AI Image Processing Project 🚀</h1>
+
+  <p class="intro-text">
+    This project combines <strong>Deep Learning</strong>, <strong>Computer Vision</strong>, 
+    and <strong>Natural Language Processing</strong> to deliver a suite of exciting AI-powered tools.  
+    Explore each feature below ⬇️
+  </p>
+
+  <!-- Caption Generator -->
+  <section class="tool-section">
+   
+    <div class="feature-card">
+         <h2>🖼️ Image Caption Generator</h2>
+      <p>
+        Upload an image and let our AI describe it in natural language.  
+        You’ll also get an <strong>audio narration</strong> of the caption using text-to-speech.
+      </p>
+       <div class="feature-subcards">
+      <div class="sub-card">✔️ Natural Language Descriptions</div>
+      <div class="sub-card">✔️ Audio Narration (TTS)</div>
+      <div class="sub-card">✔️ Fast & Accurate</div>
+      <br>
+    </div>
+    <br>
+    <br>
+      <a class="btn" href="{{ url_for('caption') }}">Try Caption Generator</a>
+    </div>
+   
+  </section>
+
+  <!-- Pencil Sketch -->
+  <section class="tool-section">
+    
+    <div class="feature-card">
+        <h2>✏️ Pencil Sketch Generator</h2>
+      <p>
+        Convert your photo into a <strong>beautiful pencil sketch</strong>.  
+        Powered by computer vision, it captures edges and shades for a realistic drawing effect.
+      </p>
+      <div class="feature-subcards">
+      <div class="sub-card">✔️ Realistic Sketch Effect</div>
+      <div class="sub-card">✔️ Quick Processing</div>
+      <div class="sub-card">✔️ Downloadable Output</div>
+    </div>
+    <br>
+    <br>
+      <a class="btn" href="{{ url_for('sketch.sketch_home') }}">Try Pencil Sketch</a>
+    </div>
+    
+  </section>
+
+  <!-- AI Assistant -->
+  <section class="tool-section">
+    
+    <div class="feature-card">
+        <h2>🤖 AI Assistant</h2>
+      <p>
+        Ask questions, get explanations, or interact with an intelligent assistant.  
+        Designed to provide <strong>helpful answers</strong> and enhance user experience.
+      </p>
+       <div class="feature-subcards">
+      <div class="sub-card">✔️ Smart Answers</div>
+      <div class="sub-card">✔️ Fast Response</div>
+      <div class="sub-card">✔️ Easy to Use</div>
+    </div>
+    <br>
+    <br>
+      <a class="btn" href="{{ url_for('chatbot.home') }}">Talk to AI Assistant</a>
+    </div>
+   
+  </section>
+
+  <!-- Cartoonify -->
+  <section class="tool-section">
+    
+    <div class="feature-card">
+        <h2>🎨 Cartoonify Image</h2>
+      <p>
+        Transform your photos into <strong>cartoon-style artwork</strong>.  
+        Great for fun edits, social media, or artistic projects!
+      </p>
+      <div class="feature-subcards">
+      <div class="sub-card">✔️ Fun & Creative</div>
+      <div class="sub-card">✔️ Shareable Results</div>
+      <div class="sub-card">✔️ Works on Any Photo</div>
+    </div>
+    <br>
+    <br>
+      <a class="btn" href="{{ url_for('cartoonify.cartoonify') }}">Try Cartoonify</a>
+    </div>
+    
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question">📂 How do I upload an image?</button>
+      <div class="faq-answer">Click on the tool you want to try, then select an image from your device and hit "Upload".</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">⬇️ Can I download my results?</button>
+      <div class="faq-answer">Yes! Most tools allow you to download the generated output directly.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">💰 Is this free to use?</button>
+      <div class="faq-answer">Absolutely! All tools are free to try. You can even contribute new features.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Built with ❤️ using AI</p>
+  </div>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff7f0;
+      color: #333;
+      min-height: 100vh;
+    }
+    .feature-card p{
+        font-family:'Times New Roman', Times, serif;
+        font-weight: 200;
+        font-size:0.5 rem;
+    }
+    p{
+        font-family:'Times New Roman', Times, serif;
+        font-weight: 200;
+        font-size:0.5 rem;
+    }
+
+    .main-title {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 2.2rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 200;
+      color: #ff6f3c;
+    }
+
+    .intro-text {
+      text-align: center;
+      font-size: 1.4rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 200;
+      color: #555;
+      margin: 20px auto 40px auto;
+      max-width: 800px;
+    }
+
+    .tool-section {
+      margin: 50px auto;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .tool-section h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background-color: #ff9e7d;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff6f3c;
+    }
+
+    .feature-subcards {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .sub-card {
+      background: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s, background 0.3s;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .sub-card:hover {
+      transform: translateY(-4px);
+      background: #ffeedb;
+    }
+
+    .faq-section {
+      margin: 60px auto;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .faq-item {
+      margin-bottom: 12px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 14px;
+      text-align: left;
+      background: #ff9e7d;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: #ff6f3c;
+    }
+
+    .faq-answer {
+      padding: 14px;
+      background: #fff;
+      display: none;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .footer {
+      margin: 50px auto;
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+    }
+  </style>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        faqItem.classList.toggle('active');
+      });
+    });
+  </script>
+{% endblock %}

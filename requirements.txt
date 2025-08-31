@@ -1,0 +1,8 @@
+Flask
+numpy
+opencv-python
+Pillow
+gTTS
+tensorflow
+keras
+werkzeug

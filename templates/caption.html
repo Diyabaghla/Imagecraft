@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Caption Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff7f0;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #444;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        
+        form {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: 0.3s ease-in-out;
+            margin-bottom: 50px;
+        }
+
+        input[type="file"] {
+            margin: 20px auto;
+            display: block;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid #aaa;
+        }
+/* Button styles */
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 24px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .buttons a:hover {
+            background: #0056b3;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            background: #ff6a00;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e65c00;
+        }
+
+        .caption {
+            margin-top: 20px;
+            font-size: 18px;
+            background: #ffe0cc;
+            padding: 15px 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        #preview img, img.uploaded {
+            max-width: 350px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+   {% include "navbar.html" %}
+
+    <div class="container">
+        <h1>🖼️ AI Image Caption Generator</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" onchange="previewImage(event)">
+            <br>
+            <button class="btn" type="submit">Generate Caption</button>
+        </form>
+
+        <div id="preview"></div>
+
+        {% if uploaded_image %}
+          <h3>Uploaded Image:</h3>
+          <img class="uploaded" src="{{ url_for('static', filename='uploads/' + uploaded_image) }}">
+        {% endif %}
+
+        {% if caption %}
+          <div class="caption">📝 Caption: {{ caption }}</div>
+        {% endif %}
+
+        {% if audio_file %}
+          <audio controls>
+            <source src="{{ url_for('static', filename='audio/' + audio_file) }}" type="audio/mp3">
+          </audio>
+        {% endif %}
+    </div>
+<div class="buttons">
+        <a href="/">🏠 Go Home</a>
+        
+    </div>
+<script>
+function previewImage(event) {
+  let previewDiv = document.getElementById("preview");
+  previewDiv.innerHTML = "";
+  let img = document.createElement("img");
+  img.src = URL.createObjectURL(event.target.files[0]);
+  img.style.maxWidth = "300px";
+  img.style.borderRadius = "10px";
+  previewDiv.appendChild(img);
+}
+</script>
+
+</body>
+</html>
+

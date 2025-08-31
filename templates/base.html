@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}AI Project{% endblock %}</title>
+</head>
+<body>
+  
+  <!-- Include Navbar -->
+  {% include "navbar.html" %}
+  
+  <main style="padding: 20px;">
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>

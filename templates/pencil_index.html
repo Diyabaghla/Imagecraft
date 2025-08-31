@@ -1,0 +1,119 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>Pencil Sketch App</title>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+     <style>
+         body {
+             margin: 0;
+             padding: 0;
+             font-family: 'Poppins', sans-serif;
+             /* background: linear-gradient(135deg, #74ebd5, #ACB6E5); */
+             /* display: flex; */
+             background-color: #fff7f0;
+             flex-direction: column;
+             align-items: center;
+             justify-content: flex-start;
+             min-height: 100vh;
+             color: #333;
+         }
+         
+            h1 {
+            color: #444;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            font-size: 2.5rem;
+        }
+         
+         .container{
+            margin: 0;
+             padding: 0;
+             font-family: 'Poppins', sans-serif;
+             /* background: linear-gradient(135deg, #74ebd5, #ACB6E5); */
+             display: flex; 
+             background-color: #fff7f0;
+             flex-direction: column;
+             align-items: center;
+             justify-content: flex-start;
+             min-height: 100vh;
+             color: #333;
+
+         }
+         
+       
+ 
+         form {
+             background: rgba(255, 255, 255, 0.2);
+             padding: 30px 40px;
+             border-radius: 20px;
+             backdrop-filter: blur(15px);
+             box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+             text-align: center;
+             transition: 0.3s ease-in-out;
+             margin-bottom: 50px;
+         }
+ 
+         input[type="file"] {
+             margin: 20px auto;
+             display: block;
+             padding: 8px;
+             font-size: 16px;
+             border-radius: 10px;
+             border: 1px solid #aaa;
+         }
+ 
+         input[type="range"],
+         select {
+             margin: 10px 0;
+             padding: 5px;
+             width: 100%;
+             border-radius: 10px;
+             border: 1px solid #aaa;
+         }
+ 
+         input[type="submit"] {
+             padding: 10px 25px;
+             background: #ff6a00;
+             color: white;
+             border: none;
+             border-radius: 30px;
+             font-size: 16px;
+             cursor: pointer;
+             transition: 0.3s;
+         }
+ 
+         input[type="submit"]:hover {
+             background: #e65c00;
+         }
+     </style>
+ </head>
+ <body>
+ {% include "navbar.html" %}
+
+<div class="container">
+ 
+     <h1>🖼️ Pencil Sketch Generator</h1>
+     <br>
+     <br>
+     <form method="POST" enctype="multipart/form-data">
+         <input type="file" name="image" accept="image/*" required><br>
+ 
+         <label for="intensity">Sketch Intensity:</label><br>
+         <input type="range" name="intensity" min="5" max="101" step="2" value="101"><br>
+ 
+         <label for="mode">Sketch Style:</label><br>
+         <select name="mode">
+             <option value="gray">Grayscale</option>
+             <option value="color">Color</option>
+         </select><br><br>
+ 
+         <input type="submit" value="Generate Sketch">
+     </form>
+    </div>
+ 
+ </body>
+ </html> 
+ 

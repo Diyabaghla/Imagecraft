@@ -1,0 +1,41 @@
+<!-- navbar.html -->
+
+<div class="navbar">
+    <div class="logo">🧠 ImageCraft</div>
+    <div class="links">
+      <a href="{{ url_for('home') }}">🏠 Home</a>
+      <a href="{{ url_for('caption') }}">🖼️ Caption Generator</a>
+      <a href="{{ url_for('sketch.sketch_home') }}">✏️ Pencil Sketch</a>
+      <a href="{{ url_for('chatbot.home') }}">🤖 AI Chatbot</a>
+      <a href="{{ url_for('cartoonify.cartoonify') }}">🎨 Cartoonify</a>
+    </div>
+  </div>
+
+<style>
+    body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff7f0;
+            color: #333;
+            min-height: 100vh;
+        }
+  .navbar {
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo { color: white; font-weight: 700; font-size: 1.4rem; }
+    .navbar .links { display: flex; gap: 20px; }
+    .navbar a {
+      color: white; text-decoration: none; font-weight: 600;
+      transition: opacity 0.3s;
+    }
+    .navbar a:hover { opacity: 0.8; }
+</style>
