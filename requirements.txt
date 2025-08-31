@@ -1,20 +1,11 @@
 flask==2.3.2
 gunicorn==21.2.0
-
-# Full TensorFlow (CPU by default on Render, since no GPU)
 tensorflow==2.20.0
-
-# If you want explicit Keras and Werkzeug versions:
-keras==3.3.3
-werkzeug==3.0.1
-
 numpy==1.24.3
-pandas==2.0.3
 opencv-python-headless==4.8.0.76
 pillow==10.0.0
-scikit-learn==1.3.0
-matplotlib==3.7.2
 gTTS==2.5.1
+werkzeug==3.0.1
 
 
 
