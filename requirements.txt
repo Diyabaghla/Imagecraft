@@ -13,7 +13,8 @@ flask==2.3.2
 gunicorn==21.2.0
 
 # TensorFlow (CPU only, lighter than GPU build)
-tensorflow-cpu==2.15.0
+tensorflow-cpu==2.20.0
+
 
 # Data & ML utilities
 numpy==1.24.3
