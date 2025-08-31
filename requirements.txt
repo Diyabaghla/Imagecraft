@@ -6,3 +6,4 @@ gTTS
 tensorflow
 keras
 werkzeug
+gunicorn
